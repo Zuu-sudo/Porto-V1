@@ -6,9 +6,9 @@ import { useLanguage } from "../context/LanguageContext";
 
 export default function About() {
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
-  useGsapTextReveal(headingRef);
+  useGsapTextReveal(headingRef, { deps: [language] });
 
   return (
     <section
@@ -26,6 +26,7 @@ export default function About() {
             {t("about.label")}
           </span>
           <h2
+            key={language}
             id="about-heading"
             ref={headingRef}
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight uppercase"

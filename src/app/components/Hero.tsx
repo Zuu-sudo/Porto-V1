@@ -49,7 +49,7 @@ export default function Hero() {
           className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-tight md:leading-none mb-4 md:mb-6 uppercase"
           style={{ color: "var(--foreground)" }}
         >
-          <span className="gradient-text">Junior Web Developer</span>
+          <span className="gradient-text">{t("hero.roleTitle")}</span>
         </h1>
 
 
@@ -72,7 +72,7 @@ export default function Hero() {
               <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
               <path d="M6 12v5c3 3 9 3 12 0v-5"/>
             </svg>
-            Universitas Negeri Surabaya
+            {t("hero.university")}
           </span>
         </div>
 

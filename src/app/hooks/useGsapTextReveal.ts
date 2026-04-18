@@ -13,6 +13,8 @@ interface UseGsapTextRevealOptions {
   stagger?: number;
   duration?: number;
   startY?: number;
+  /** Pass a changing value (e.g. language) to re-trigger the animation */
+  deps?: unknown[];
 }
 
 /**
@@ -23,7 +25,7 @@ export function useGsapTextReveal(
   ref: RefObject<HTMLElement | null>,
   options: UseGsapTextRevealOptions = {}
 ) {
-  const { stagger = 0.05, duration = 0.8, startY = 50 } = options;
+  const { stagger = 0.05, duration = 0.8, startY = 50, deps = [] } = options;
 
   useEffect(() => {
     if (!ref.current) return;
@@ -72,5 +74,6 @@ export function useGsapTextReveal(
         }
       });
     };
-  }, [ref, stagger, duration, startY]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ref, stagger, duration, startY, ...deps]);
 }

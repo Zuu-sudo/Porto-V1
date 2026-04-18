@@ -7,9 +7,9 @@ import { useLanguage } from "../context/LanguageContext";
 
 export default function Contact() {
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
-  useGsapTextReveal(headingRef, { stagger: 0.03 });
+  useGsapTextReveal(headingRef, { stagger: 0.03, deps: [language] });
 
   return (
     <section
@@ -25,6 +25,7 @@ export default function Contact() {
             {t("contact.label")}
           </span>
           <h2
+            key={language}
             id="contact-heading"
             ref={headingRef}
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight uppercase"
