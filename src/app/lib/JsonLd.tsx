@@ -2,23 +2,22 @@ export default function JsonLd() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Akbar Wijaya",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://akbarwijaya.vercel.app",
+    name: "Ananta Naufal Imamul Hikam",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://anantanaufal.vercel.app",
     image: `${
-      process.env.NEXT_PUBLIC_SITE_URL || "https://akbarwijaya.vercel.app"
+      process.env.NEXT_PUBLIC_SITE_URL || "https://anantanaufal.vercel.app"
     }/og-image.png`,
     sameAs: [
-      "https://github.com/akbarwijaya",
-      "https://linkedin.com/in/akbarwijaya",
-      "https://gitlab.com/akbarwijaya",
+      "https://github.com/anantanaufal",
+      "https://linkedin.com/in/anantanaufal",
     ],
-    jobTitle: "Web Developer & Backend Specialist",
+    jobTitle: "Junior Web Developer",
     worksFor: {
       "@type": "Organization",
       name: "Freelance",
     },
     description:
-      "Web Developer focused on Backend Development. Specializing in building scalable server-side applications, RESTful APIs, and database architecture using Node.js, Express.js, and modern web technologies.",
+      "Junior Web Developer dari Universitas Negeri Surabaya. Berfokus pada pengembangan web modern menggunakan React, Next.js, dan teknologi web terkini.",
     knowsAbout: [
       "Web Development",
       "Next.js",
@@ -34,20 +33,20 @@ export default function JsonLd() {
     ],
     alumniOf: {
       "@type": "EducationalOrganization",
-      name: "Universitas Teknologi Digital Indonesia",
+      name: "Universitas Negeri Surabaya",
     },
   };
 
   const websiteData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Akbar Wijaya Portfolio",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://akbarwijaya.vercel.app",
+    name: "Ananta Naufal Imamul Hikam — Portfolio",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://anantanaufal.vercel.app",
     description:
-      "Personal portfolio of Akbar Wijaya, a Web Developer focused on Backend Development and server-side technologies.",
+      "Portfolio pribadi Ananta Naufal Imamul Hikam, seorang Junior Web Developer dari Universitas Negeri Surabaya.",
     author: {
       "@type": "Person",
-      name: "Akbar Wijaya",
+      name: "Ananta Naufal Imamul Hikam",
     },
   };
 

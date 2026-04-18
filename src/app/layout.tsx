@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import AOSProvider from "./providers/AOSProvider";
+import { ThemeProvider } from "./context/ThemeContext";
+import { LanguageProvider } from "./context/LanguageContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -16,31 +18,32 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://akbarwijaya.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://anantanaufal.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Akbar Wijaya | Web Developer & Backend Specialist",
-    template: "%s | Akbar Wijaya",
+    default: "Ananta Naufal Imamul Hikam | Junior Web Developer",
+    template: "%s | Ananta Naufal",
   },
   description:
-    "Akbar Wijaya is a Web Developer focused on Backend Development. Specializing in building scalable server-side applications, RESTful APIs, and database architecture using Node.js, Express.js, and modern web technologies.",
+    "Ananta Naufal Imamul Hikam — Mahasiswa Informatika Universitas Negeri Surabaya. Junior Web Developer yang berfokus pada pengembangan web modern menggunakan React, Next.js, dan teknologi web terkini.",
   keywords: [
-    "Akbar Wijaya",
+    "Ananta Naufal Imamul Hikam",
+    "Junior Web Developer",
     "Web Developer",
-    "Backend Developer",
-    "Next.js Developer",
+    "Universitas Negeri Surabaya",
+    "UNESA",
     "React Developer",
-    "Tailwind CSS",
-    "Full Stack Developer",
-    "Indonesia Developer",
+    "Next.js Developer",
+    "Frontend Developer",
+    "Informatika",
     "Portfolio",
-    "Software Engineer",
+    "Indonesia Developer",
   ],
-  authors: [{ name: "Akbar Wijaya", url: siteUrl }],
-  creator: "Akbar Wijaya",
-  publisher: "Akbar Wijaya",
+  authors: [{ name: "Ananta Naufal Imamul Hikam", url: siteUrl }],
+  creator: "Ananta Naufal Imamul Hikam",
+  publisher: "Ananta Naufal Imamul Hikam",
   robots: {
     index: true,
     follow: true,
@@ -63,28 +66,27 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "id_ID",
     url: siteUrl,
-    siteName: "Akbar Wijaya Portfolio",
-    title: "Akbar Wijaya | Web Developer & Backend Specialist",
+    siteName: "Ananta Naufal — Portfolio",
+    title: "Ananta Naufal Imamul Hikam | Junior Web Developer",
     description:
-      "Web Developer focused on Backend Development. Building scalable server-side applications, RESTful APIs, and robust database solutions.",
+      "Junior Web Developer dari Universitas Negeri Surabaya. Membangun aplikasi web modern yang skalabel dan efisien.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Akbar Wijaya - Web Developer Portfolio",
+        alt: "Ananta Naufal Imamul Hikam - Junior Web Developer Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Akbar Wijaya | Web Developer & Backend Specialist",
+    title: "Ananta Naufal Imamul Hikam | Junior Web Developer",
     description:
-      "Web Developer focused on Backend Development. Building scalable server-side applications and RESTful APIs.",
+      "Junior Web Developer dari Universitas Negeri Surabaya. Membangun aplikasi web modern.",
     images: ["/og-image.png"],
-    creator: "@akbarwijaya",
   },
   alternates: {
     canonical: siteUrl,
@@ -94,8 +96,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+    { media: "(prefers-color-scheme: light)", color: "#fafbff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0f" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -108,15 +110,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth overflow-x-hidden">
+    <html lang="id" className="scroll-smooth overflow-x-hidden" data-theme="dark" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('portfolio-theme') || 'dark';
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
       </head>
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} antialiased font-sans overflow-x-hidden`}
       >
-        <AOSProvider>{children}</AOSProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <AOSProvider>{children}</AOSProvider>
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -2,19 +2,19 @@ import { Metadata } from "next";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Projects from "./components/Projects";
+
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import JsonLd from "./lib/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Akbar Wijaya | Web Developer & Backend Specialist",
+  title: "Ananta Naufal Imamul Hikam | Junior Web Developer",
   description:
-    "Welcome to Akbar Wijaya portfolio. A Web Developer focused on Backend Development, specializing in building scalable server-side applications and RESTful APIs.",
+    "Halo! Perkenalkan saya Ananta Naufal Imamul Hikam, mahasiswa Informatika Universitas Negeri Surabaya. Junior Web Developer yang passionate membangun aplikasi web modern.",
   openGraph: {
-    title: "Akbar Wijaya | Web Developer Portfolio",
+    title: "Ananta Naufal Imamul Hikam — Portfolio",
     description:
-      "Discover projects and skills of Akbar Wijaya, a Web Developer focused on Backend Development and server-side technologies.",
+      "Perkenalkan, saya Ananta Naufal — Junior Web Developer dari Universitas Negeri Surabaya. Mari lihat karya-karya saya.",
   },
 };
 
@@ -25,10 +25,10 @@ export default function Home() {
       <header>
         <Navbar />
       </header>
-      <main className="min-h-screen bg-white overflow-x-hidden">
+      <main className="min-h-screen overflow-x-hidden" style={{ background: "var(--background)" }}>
         <Hero />
         <About />
-        <Projects />
+
         <Contact />
       </main>
       <Footer />

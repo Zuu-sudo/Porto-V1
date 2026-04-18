@@ -1,6 +1,5 @@
 import {
   GithubIcon,
-  GitlabIcon,
   LinkedinIcon,
   InstagramIcon,
 } from "../components/icons/SocialIcons";
@@ -14,22 +13,17 @@ export interface SocialLink {
 export const socialLinks: SocialLink[] = [
   {
     name: "GitHub",
-    url: "https://github.com/akbarwjyy",
+    url: "https://github.com/anantanaufal",
     icon: <GithubIcon />,
   },
   {
-    name: "GitLab",
-    url: "https://gitlab.com/akbarwijaya/",
-    icon: <GitlabIcon />,
-  },
-  {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/akbar-wijaya/",
+    url: "https://www.linkedin.com/in/anantanaufal/",
     icon: <LinkedinIcon />,
   },
   {
     name: "Instagram",
-    url: "https://www.instagram.com/akbarwjyaa_/",
+    url: "https://www.instagram.com/anantanaufal/",
     icon: <InstagramIcon />,
   },
 ];
