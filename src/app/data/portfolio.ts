@@ -34,8 +34,8 @@ export const skills: SkillCategory[] = [
     items: [
       "Node.js",
       "Express.js",
-      "Laravel",
-      "Flask",
+      "Go",
+      "Spring Boot",
       "PostgreSQL",
       "MySQL",
       "MongoDB",
@@ -72,13 +72,13 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: "PORTAL UKM IK",
+    title: "PMB - UTDI",
     description:
       "A web-based organization management platform designed to streamline member administration and content publishing.",
-    techStack: ["React.js", "Express.js", "TailwindCSS", "MySQL"],
-    link: "/building",
+    techStack: ["Next.js", "GSAP", "TailwindCSS",],
+    link: "https://pmb.utdi.ac.id/home/",
     github: "#",
-    image: "/projects/image.png",
+    image: "/projects/project5.png",
     featured: true,
   },
 ];
