@@ -18,7 +18,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://anantanaufal.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://portofolio.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

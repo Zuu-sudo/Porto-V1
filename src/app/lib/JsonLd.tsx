@@ -3,9 +3,9 @@ export default function JsonLd() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Ananta Naufal Imamul Hikam",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://anantanaufal.vercel.app",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://portofolio.vercel.app",
     image: `${
-      process.env.NEXT_PUBLIC_SITE_URL || "https://anantanaufal.vercel.app"
+      process.env.NEXT_PUBLIC_SITE_URL || "https://portofolio.vercel.app"
     }/og-image.png`,
     sameAs: [
       "https://github.com/anantanaufal",
@@ -41,7 +41,7 @@ export default function JsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Ananta Naufal Imamul Hikam — Portfolio",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://anantanaufal.vercel.app",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://portofolio.vercel.app",
     description:
       "Portfolio pribadi Ananta Naufal Imamul Hikam, seorang Junior Web Developer dari Universitas Negeri Surabaya.",
     author: {
