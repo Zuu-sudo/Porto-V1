@@ -7,10 +7,21 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   turbopack: {},
   images: {
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "inline",
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
       {
         protocol: "https",
         hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.simpleicons.org",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.jsdelivr.net",
       },
     ],
   },
